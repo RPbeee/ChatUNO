@@ -1,0 +1,29 @@
+name: ChatUNO
+version: '${project.version}'
+main: net.github.rpbeee.chatuno.ChatUNO
+authors: [ RPbeee ]
+description: マイクラのチャット画面でUNOを遊べるようにするプラグイン
+commands:
+  chatuno:
+    description: ChatUNOのメインコマンド
+    permission: ChatUNO.chatuno
+    permission-message: "You don't have a permission!"
+  unoplay:
+    description: UNOを遊ぶ際に使うコマンド
+    permission: ChatUNO.unoplay
+    permission-message: "You don't have any permissions!"
+permissions:
+  ChatUNO.*:
+    description: ChatUNOの全ての権限
+    children:
+      ChatUNO.chatuno: true
+      ChatUNO.unoplay: true
+    default: op
+  ChatUNO.chatuno:
+    description: ChatUNOで会場を開く権限
+    children:
+      ChatUNO.unoplay: true
+    default: op
+  ChatUNO.unoplay:
+    description: ChatUNOで遊ぶ権限
+    default: op
