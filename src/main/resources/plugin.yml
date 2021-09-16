@@ -12,12 +12,17 @@ commands:
     description: UNOを遊ぶ際に使うコマンド
     permission: ChatUNO.unoplay
     permission-message: "You don't have any permissions!"
+  unoadmin:
+    description: ChatUNOのアドミンコマンド
+    permission: ChatUNO.unoadmin
+    permission-message: "You don't have a permission!"
 permissions:
   ChatUNO.*:
-    description: ChatUNOの全ての権限
+    description: ChatUNOをプレイするのに必要な全ての権限
     children:
       ChatUNO.chatuno: true
       ChatUNO.unoplay: true
+      ChatUNO.unoadmin: false
     default: op
   ChatUNO.chatuno:
     description: ChatUNOで会場を開く権限
@@ -26,4 +31,7 @@ permissions:
     default: op
   ChatUNO.unoplay:
     description: ChatUNOで遊ぶ権限
+    default: op
+  ChatUNO.unoadmin:
+    description: ChatUNOのアドミン権限
     default: op
